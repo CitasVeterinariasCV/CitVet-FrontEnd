@@ -1,0 +1,201 @@
+<!-- Interfaz de Registro de Usuario -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Pet Society</title>
+
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            width: 80px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            margin-right: 15px;
+            color: #2c3e50;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ff9f43;
+        }
+
+        /* Estilos de los botones */
+        .btn-warning {
+            background-color: #ff9f43;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-warning:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
+        .btn-dark {
+            background-color: #2c3e50;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-dark:hover {
+            background-color: #34495e;
+            transform: scale(1.05);
+        }
+
+        /* Sección principal */
+        .container-fluid {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+        }
+
+        /* Animación */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container-fluid, .navbar {
+            animation: fadeInUp 1.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="inicio.html">
+                <img src="images/logo.jpeg" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nuestros servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nuestro equipo</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a class="nav-link btn btn-outline-warning mx-2" href="index.html">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección principal -->
+    <div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row" style="max-width: 80%; min-height: 80vh; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 30px; overflow: hidden;">
+            <div class="col-md-6 d-flex align-items-center justify-content-center p-0">
+                <div class="card p-4 w-100 d-flex flex-column justify-content-center" style="background-color: #ffedd5; height: 100%;">
+                    <h1 class="text-center">¡Hola!</h1>
+                    <p class="text-center"><a href="#" style="color: #000; text-decoration: none;">Bienvenido a Pet Society</a></p>
+
+                    <!-- Formulario de inicio de sesión -->
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <input type="text" id="nombreusuario" class="form-control" placeholder="Crea un nombre de usuario" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="password1" class="form-control" placeholder="Crea tu contraseña" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="password2" class="form-control" placeholder="Confirma tu contraseña" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" id="email" class="form-control" placeholder="Escribe tu dirección de email" required>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100" style="border-radius: 25px;">Registrarse</button>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <p>¿Ya tienes una cuenta? <a href="index.html" style="color: #007bff;">Inicia Sesión</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 p-0">
+                <img src="images/perrovaso.jpg" class="img-fluid w-100 h-100" alt="Imagen de perro" style="object-fit: cover;">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            // Obtén los valores del formulario
+            const username = document.getElementById("nombreusuario").value.trim();
+            const password1 = document.getElementById("password1").value.trim();
+            const password2 = document.getElementById("password2").value.trim();
+            const email = document.getElementById("email").value.trim();
+
+            // Verifica que las contraseñas coincidan
+            if (password1 !== password2) {
+                alert("Las contraseñas no coinciden. Inténtalo de nuevo.");
+                return;
+            }
+
+            // Guarda los datos en LocalStorage
+            localStorage.setItem("emailUsuario", email);
+            localStorage.setItem("passwordUsuario", password1);
+
+            // Simula el proceso de registro y redirige al inicio de sesión
+            alert("¡Registro exitoso! Ahora puedes iniciar sesión.");
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>

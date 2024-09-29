@@ -1,0 +1,264 @@
+<!-- Interfaz de Inicio del Veterinario -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido, Dr. Diego Gonzáles</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos personalizados -->
+    <style>
+        /* Estilos personalizados para el contenedor principal y tablas */
+        .main-container {
+            background-color: #F19A56;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Estilo para las tablas */
+        .table {
+            background-color: white; /* Fondo blanco para la tabla */
+            color: black; /* Texto negro */
+        }
+
+        .table-bordered {
+            border: 1px solid black; /* Borde negro */
+        }
+
+        .table-bordered th, .table-bordered td {
+            border: 1px solid black; /* Bordes de celdas en negro */
+            color: black; /* Asegura que el texto en las celdas sea negro */
+            padding: 10px;
+            border: 2px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+        }
+
+        .table thead {
+            background-color: rgb(255, 255, 255); /* Fondo blanco para el encabezado de la tabla */
+            color: black; /* Texto negro para el encabezado */
+        }
+
+        /* Ajuste de la imagen al lado derecho */
+        .doctor-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Texto blanco para títulos */
+        .welcome-text {
+            color: rgb(0, 0, 0);
+            text-align: left;
+        }
+
+        /* Estilo para el texto de Citas programadas */
+        .appointments-text {
+            color: black;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .doctor-bio {
+            color: rgb(0, 0, 0);
+            text-align: justify;
+            width: 100%;
+        }
+
+        .contact-info {
+            color: rgb(0, 0, 0);
+        }
+
+        .contact-info a {
+            color: black; /* Asegura que el enlace sea negro */
+        }
+
+        .about-me {
+            font-weight: bold; /* Hace el texto "Sobre mí" más grueso */
+            color: black;
+        }
+
+        a {
+        color: #030303; /* Cambia esto al color que prefieras */
+        }
+
+        a:hover {
+        color: #0056b3; /* Cambia el color cuando el mouse esté sobre el enlace */
+        }
+
+        h4{
+            color: black;   
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="inicio.html">
+                <img src="images/logo.jpeg" alt="logo" style="width: 100px;" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nuestros servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nuestro equipo</a>
+                    </li>
+                </ul>
+                <div class="d-flex" style="margin-left: auto; margin-right: 20px;">
+                    <a class="nav-link btn btn-outline-warning mx-2" href="index.html">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor Principal con Fondo -->
+    <div class="container mt-5 main-container">
+        <!-- Bienvenida -->
+        <div class="row">
+            <div class="col">
+                <h1 class="welcome-text">Bienvenido, Dr. Diego Gonzáles</h1>
+            </div>
+        </div>
+
+        <!-- Texto de Citas programadas y Tabla de Citas Programadas -->
+        <div class="row justify-content-between mt-4">
+            <div class="col text-end">
+                <p class="appointments-text">Citas programadas:</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <table class="table table-bordered table-hover">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Descripción</th>
+                            <th>Dueño</th>
+                            <th>Mascota</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=02:15%20pm&descripcion=Ecografía%20de%20perro&dueño=David%20León&mascota=Travis&estado=Pendiente">01-10-2024</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=02:15%20pm&descripcion=Ecografía%20de%20perro&dueño=David%20León&mascota=Travis&estado=Pendiente">02:15 pm</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=02:15%20pm&descripcion=Ecografía%20de%20perro&dueño=David%20León&mascota=Travis&estado=Pendiente">Ecografía de perro</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=02:15%20pm&descripcion=Ecografía%20de%20perro&dueño=David%20León&mascota=Travis&estado=Pendiente">David León</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=02:15%20pm&descripcion=Ecografía%20de%20perro&dueño=David%20León&mascota=Travis&estado=Pendiente">Travis</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=02:15%20pm&descripcion=Ecografía%20de%20perro&dueño=David%20León&mascota=Travis&estado=Pendiente">Pendiente</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=04:00%20pm&descripcion=Esterilización%20de%20gato&dueño=Rosa%20Arias&mascota=Luna&estado=Pendiente">01-10-2024</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=04:00%20pm&descripcion=Esterilización%20de%20gato&dueño=Rosa%20Arias&mascota=Luna&estado=Pendiente">04:00 pm</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=04:00%20pm&descripcion=Esterilización%20de%20gato&dueño=Rosa%20Arias&mascota=Luna&estado=Pendiente">Esterilización de gato</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=04:00%20pm&descripcion=Esterilización%20de%20gato&dueño=Rosa%20Arias&mascota=Luna&estado=Pendiente">Rosa Arias</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=04:00%20pm&descripcion=Esterilización%20de%20gato&dueño=Rosa%20Arias&mascota=Luna&estado=Pendiente">Luna</a></td>
+                            <td><a href="Separacion.html?fecha=01-10-2024&hora=04:00%20pm&descripcion=Esterilización%20de%20gato&dueño=Rosa%20Arias&mascota=Luna&estado=Pendiente">Pendiente</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="Separacion.html?fecha=02-10-2024&hora=09:00%20am&descripcion=Consulta%20general&dueño=Carlos%20Mendoza&mascota=Max&estado=Pendiente">02-10-2024</a></td>
+                            <td><a href="Separacion.html?fecha=02-10-2024&hora=09:00%20am&descripcion=Consulta%20general&dueño=Carlos%20Mendoza&mascota=Max&estado=Pendiente">09:00 am</a></td>
+                            <td><a href="Separacion.html?fecha=02-10-2024&hora=09:00%20am&descripcion=Consulta%20general&dueño=Carlos%20Mendoza&mascota=Max&estado=Pendiente">Consulta general</a></td>
+                            <td><a href="Separacion.html?fecha=02-10-2024&hora=09:00%20am&descripcion=Consulta%20general&dueño=Carlos%20Mendoza&mascota=Max&estado=Pendiente">Carlos Mendoza</a></td>
+                            <td><a href="separacion.html?fecha=02-10-2024&hora=09:00%20am&descripcion=Consulta%20general&dueño=Carlos%20Mendoza&mascota=Max&estado=Pendiente">Max</a></td>
+                            <td><a href="Separacion.html?fecha=02-10-2024&hora=09:00%20am&descripcion=Consulta%20general&dueño=Carlos%20Mendoza&mascota=Max&estado=Pendiente">Pendiente</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="Separacion.html?fecha=03-10-2024&hora=11:30%20am&descripcion=Vacunación&dueño=Ana%20Gómez&mascota=Nina&estado=Pendiente">03-10-2024</a></td>
+                            <td><a href="Separacion.html?fecha=03-10-2024&hora=11:30%20am&descripcion=Vacunación&dueño=Ana%20Gómez&mascota=Nina&estado=Pendiente">11:30 am</a></td>
+                            <td><a href="Separacion.html?fecha=03-10-2024&hora=11:30%20am&descripcion=Vacunación&dueño=Ana%20Gómez&mascota=Nina&estado=Pendiente">Vacunación</a></td>
+                            <td><a href="Separacion.html?fecha=03-10-2024&hora=11:30%20am&descripcion=Vacunación&dueño=Ana%20Gómez&mascota=Nina&estado=Pendiente">Ana Gómez</a></td>
+                            <td><a href="Separacion.html?fecha=03-10-2024&hora=11:30%20am&descripcion=Vacunación&dueño=Ana%20Gómez&mascota=Nina&estado=Pendiente">Nina</a></td>
+                            <td><a href="Separacion.html?fecha=03-10-2024&hora=11:30%20am&descripcion=Vacunación&dueño=Ana%20Gómez&mascota=Nina&estado=Pendiente">Pendiente</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Sobre mí (extendido en color blanco) -->
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <!-- Texto "Sobre mí" -->
+                <p class="about-me">Sobre mí</p>
+                <p class="doctor-bio">
+                    Soy el Dr. Diego Gonzáles Sánchez, soy médico veterinario de PetSociety. Estoy a su disposición, al igual que la de su mascota. 
+                    Me dedico a la especialidad de cirugía en caninos y felinos, con 15 años de experiencia. 
+                    Para mayor información y detalles, puede revisar mi perfil.
+                </p>
+            </div>
+        </div>
+
+        <!-- Horarios de Disponibilidad y Imagen al lado derecho -->
+        <div class="row mt-4">
+            <!-- Tabla de Horarios -->
+            <div class="col-lg-8">
+                <h4>Horarios de disponibilidad:</h4>
+                <table class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Día(s)</th>
+                            <th>Horas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="disponibilidad.html">Lunes - Martes</a></td>
+                            <td><a href="disponibilidad.html">02:00 pm - 07:00 pm</a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="disponibilidad.html">Miércoles - Jueves</a></td>
+                            <td><a href="disponibilidad.html">12:00 pm - 02:00 pm - 03:00 pm - 07:45 pm</a></td>
+                        </tr>
+                        </tr>
+                            <td><a href="disponibilidad.html">Viernes</a></td>
+                            <td><a href="disponibilidad.html">03:30 pm - 07:45 pm</a></td>
+                        <tr>
+                        </tr>
+                            <td><a href="disponibilidad.html">Sábado</a></td>
+                            <td><a href="disponibilidad.html">08:00 am - 01:00 pm</a></td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Imagen a la derecha de la tabla -->
+            <div class="col-lg-4 text-center">
+                <img src="images/vete.jpg" class="img-fluid doctor-image" alt="Dr. Diego Gonzáles">
+            </div>
+        </div>
+
+        <!-- Información de contacto (en blanco, excepto el correo) -->
+        <div class="row mt-4">
+            <div class="col text-center">
+                <p class="contact-info">Para consultas o acuerdos previos, contáctese a mi correo electrónico: <a href="mailto:dgonzales2@ps.com">dgonzales2@ps.com</a></p>
+                <p class="contact-info">Muchas gracias,</p>
+                <p class="contact-info"><strong>Dr. Diego Gonzáles Sánchez</strong><br>DNI: 828875629</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="text-center mt-5">
+        <p>¡Cuida de tus mascotas!</p>
+        <div>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+        <p>© 2024 PetSociety. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
