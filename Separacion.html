@@ -1,0 +1,223 @@
+<!-- Interfaz de Separación de Citas -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separación de citas</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .appointment-container {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #6A7AFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #050505;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th, td {
+            background-color: #f8f8f8;
+        }
+
+        .dog-image {
+            width: 100%; /* La imagen se ajusta al ancho del contenedor */
+            height: auto; /* Mantiene la proporción */
+            max-width: 250px; /* Tamaño máximo de la imagen */
+            border-radius: 10px; /* Bordes redondeados para la imagen */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-green {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-red {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-return {
+            background-color: #FF7A00;
+            color: black;
+            display: inline-block;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-return:hover {
+            opacity: 0.9;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="vet.html">
+                <img src="C:\Users\AORUS\Desktop\InSo2\PROPUESTO\-EJER1\images\WhatsApp Image 2024-09-26 at 10.13.52 AM.jpeg" alt="logo" style="width: 100px;" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nuestros servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nuestro equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-warning mx-2" href="index.html">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="appointment-container">
+        <h1>Separación de citas</h1>
+        <h2>Información de la Cita:</h2>
+        <table>
+            <tr>
+                <th>Fecha</th>
+                <td id="fecha">null</td>
+            </tr>
+            <tr>
+                <th>Hora</th>
+                <td id="hora">null</td>
+            </tr>
+            <tr>
+                <th>Descripción</th>
+                <td id="descripcion">null</td>
+            </tr>
+            <tr>
+                <th>Dueño</th>
+                <td id="dueño">null</td>
+            </tr>
+            <tr>
+                <th>Mascota</th>
+                <td id="mascota">null</td>
+            </tr>
+            <tr>
+                <th>Estado</th>
+                <td id="estado">null</td>
+            </tr>
+        </table>
+
+        <img id="dogImage" class="dog-image" src="" alt="Imagen del perro correspondiente">
+        
+        <div class="buttons">
+            <button class="btn btn-green">Aceptar Cita</button>
+            <button class="btn btn-red">Rechazar Cita</button>
+        </div>
+        <a href="vet.html" class="btn-return">Regresar al Inicio</a>
+    </div>
+
+    <script>
+        // Simulación de los parámetros recibidos por URL (puedes adaptar esto a tu lógica real)
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Aquí capturamos los valores de la URL (los valores reales vendrán desde vet.html)
+        const fecha = urlParams.get('fecha') || 'null';
+        const hora = urlParams.get('hora') || 'null';
+        const descripcion = urlParams.get('descripcion') || 'null';
+        const dueño = urlParams.get('dueño') || 'null';
+        const mascota = urlParams.get('mascota') || 'null';
+        const estado = urlParams.get('estado') || 'null';
+
+        // Asignar los valores a las celdas de la tabla
+        document.getElementById('fecha').textContent = fecha;
+        document.getElementById('hora').textContent = hora;
+        document.getElementById('descripcion').textContent = descripcion;
+        document.getElementById('dueño').textContent = dueño;
+        document.getElementById('mascota').textContent = mascota;
+        document.getElementById('estado').textContent = estado;
+
+         // Mostrar la imagen del perro dependiendo del nombre de la mascota
+         const dogImage = document.getElementById('dogImage');
+        if (mascota === 'Travis') {
+            dogImage.src = 'https://chuchupets.es/wordpress/wp-content/uploads/2023/11/ai-generado-perro-labrador-retriever-1-scaled.jpg'; // Asegúrate de tener esta imagen
+        } else if (mascota === 'Max') {
+            dogImage.src = 'https://estaticos-cdn.prensaiberica.es/clip/a5ee7a2a-6f63-4ab9-8986-ba83113aca56_16-9-discover-aspect-ratio_default_0.jpg'; // Asegúrate de tener esta imagen
+        } else if (mascota === 'Luna') {
+            dogImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmV9KCDau30hVeehMulZzCqlZvoKFZXOe_2g&s'; // Asegúrate de tener esta imagen
+        } else if (mascota === 'Nina') {
+            dogImage.src = 'https://www.snau.es/blog/wp-content/uploads/2019/04/perro_feliz.jpg'; // Asegúrate de tener esta imagen
+        } else {
+            dogImage.src = 'https://i.pinimg.com/736x/ae/68/8a/ae688a5338799ef4ea6269b387144a0f.jpg'; // Imagen por defecto
+        }
+    </script>
+    <!-- Pie de página -->
+    <footer class="text-center mt-5">
+        <p>¡Cuida de tus mascotas!</p>
+        <div>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
