@@ -16,10 +16,11 @@
                 <a href="#" class="navbar-brand">
                     <img src="images/logo.png" alt="Logo" class="logo">
                 </a>
-                <div class="navbar-buttons">
-                    <button class="btn btn-secondary">Mi Cuenta</button>
-                    <button class="btn btn-warning">Reservar ahora</button>
-                </div>
+            </div>
+            <div class="navbar-buttons">
+                <button class="btn btn-secondary">Mi Cuenta</button>
+                <button class="btn btn-warning" onclick="window.location.href='reserva.html'">Reservar ahora</button>
+              </div>
             </div>
         </nav>
     </header>
@@ -55,78 +56,52 @@
 
         <!-- Sección "Mis Mascotas" -->
         <section id="mascotas" class="tab-content active">
-            <div class="mascotas-list">
-                <div class="mascota-card">
-                    <img src="images/mascota1.jpg" alt="Fido" class="dog-image">
-                    <p>Fido</p>
-                </div>
-                <div class="mascota-card">
-                    <img src="images/mascota2.jpg" alt="Bobby" class="dog-image">
-                    <p>Bobby</p>
-                </div>
-                <div class="mascota-card">
-                    <img src="images/mascota3.jpg" alt="Negra" class="dog-image">
-                    <p>Negra</p>
+            <div class="container my-5">
+                <div class="row" id="lista-mascotas">
+                    <!-- Las tarjetas de las mascotas se agregarán aquí -->
                 </div>
             </div>
+            
         </section>
 
 
         <!-- Sección "Añadir Mascota" -->
         <section id="agregar" class="tab-content">
-            <div class="container" style="background-color: #ffce73; border-radius: 15px; padding: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+            <div class="container my-5">
                 <h2 class="text-center">Añadir Mascota</h2>
-                <form class="form-mascota">
-                    <!-- Tipo de Mascota -->
+                <form id="form-agregar-mascota">
+                    <!-- Especie de Mascota -->
                     <div class="form-group">
-                        <label for="tipo">Tipo de mascota</label>
+                        <label for="tipo">Especie de mascota</label>
                         <select id="tipo" class="form-control" required>
-                            <option value="">Selecciona el tipo de mascota</option>
+                            <option value="">Selecciona la especie de mascota</option>
                             <option value="perro">Perro</option>
                             <option value="gato">Gato</option>
                             <option value="ave">Ave</option>
                             <option value="otro">Otro</option>
                         </select>
                     </div>
-                    <!-- Especie -->
                     <div class="form-group">
-                        <label for="especie">Especie</label>
-                        <input type="text" id="especie" class="form-control" placeholder="Especie de tu mascota" required>
+                        <label for="nombre-mascota">Nombre de la Mascota</label>
+                        <input type="text" class="form-control" id="nombre-mascota" placeholder="Nombre">
                     </div>
-                    <!-- Raza -->
                     <div class="form-group">
-                        <label for="raza">Raza</label>
-                        <input type="text" id="raza" class="form-control" placeholder="Raza" required>
+                        <label for="raza-mascota">Raza</label>
+                        <input type="text" class="form-control" id="raza-mascota" placeholder="Raza">
                     </div>
-                    <!-- Nombre -->
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
+                        <label for="edad-mascota">Edad</label>
+                        <input type="number" class="form-control" id="edad-mascota" placeholder="Edad">
                     </div>
-                    <!-- Edad -->
-                    <div class="form-group">
-                        <label for="edad">Edad</label>
-                        <input type="number" id="edad" class="form-control" placeholder="Edad (años)" min="0" max="30" required>
-                    </div>
-                    <!-- Tamaño de la mascota -->
-                    <div class="form-group">
-                        <label for="tamano">Tamaño de la mascota</label>
-                        <select id="tamano" class="form-control" required>
-                            <option value="">Selecciona el tamaño</option>
-                            <option value="pequeno">Pequeño</option>
-                            <option value="mediano">Mediano</option>
-                            <option value="grande">Grande</option>
-                        </select>
-                    </div>
-                    <!-- Confirmación -->
                     <div class="form-group">
                         <input type="checkbox" id="confirmar" required>
                         <label for="confirmar">Confirmo que los datos de mi mascota son correctos</label>
                     </div>
                     <!-- Botón de Enviar -->
-                    <button type="submit" class="btn btn-primary btn-block">Añadir a mis mascotas</button>
+                    <button type="button" class="btn btn-primary" id="agregar-mascota-btn">Añadir a mis mascotas</button>
                 </form>
             </div>
+            
         </section>
 
 
@@ -138,8 +113,9 @@
             <p>Tipo: Radiografía</p>
             <p>Con: Dr. Gonzales</p>
             <p>Hora: 4:30 pm</p>
-            <button class="btn btn-primary">Reservar otra</button>
+            <button class="btn btn-primary" onclick="window.location.href='reserva.html'">Reservar otra</button>
         </section>
+        
     </main>
 
     <!-- Footer -->
