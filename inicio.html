@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Estilos personalizados -->
+    <title>Pet Society</title>
+
+    <style>
+        /* Estilo general */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            margin: 10px;
+            padding: 0;
+        }
+
+        /* Barra de navegación */
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            width: 80px;
+            transition: transform 0.3s;
+        }
+
+        .navbar-brand img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+            margin-right: 15px;
+            color: #2c3e50;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #ff9f43;
+        }
+
+        /* Estilos de los botones */
+        .btn-warning {
+            background-color: #ff9f43;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-warning:hover {
+            background-color: #e67e22;
+            transform: scale(1.05);
+        }
+
+        /* Sección principal */
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .col-lg-6 img {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+
+        .col-lg-6 img:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #7f8c8d;
+        }
+
+        /* Sección de bienvenida */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .btn-dark {
+            background-color: #2c3e50;
+            border: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-dark:hover {
+            background-color: #34495e;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        footer a img {
+            margin: 0 10px;
+            width: 40px;
+            transition: transform 0.3s;
+        }
+
+        footer a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container, .navbar, footer {
+            animation: fadeInUp 1.2s ease;
+        }
+
+    </style>
+</head>
+<body>
+
+   <!-- Barra de navegación -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="inicio.html">
+            <img src="images/logo.jpeg" alt="logo" style="width: 100px;" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nuestros servicios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nuestro equipo</a>
+                </li>
+            </ul>
+            <div class="d-flex" style="margin-left: auto; margin-right: 20px;">
+                <a class="nav-link btn btn-outline-warning mx-2" href="index.html">Iniciar Sesión</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sección principal -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="images/perro.jpeg" alt="Perro" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <h2>Clínica veterinaria en Trujillo</h2>
+                <p>Como clínica líder en la ciudad, decidimos expandir nuestros servicios para brindarte la seguridad y el cuidado que tu mascota merece.</p>
+                <div>
+                    <p><strong>+10 Reseñas</strong></p>
+                    <p>Av. Prof. César Vallejo 95, Víctor Larco Herrera, Trujillo</p>
+                    <p>Visítanos 24 horas al día</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de bienvenida -->
+    <div class="container mt-5 p-4" style="background-color: #ffedd5;">
+        <h2 class="text-center">Bienvenido a Pet Society</h2>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/local.jpg" class="card-img-top" alt="Sobre nosotros">
+                    <div class="card-body">
+                        <h5 class="card-title">Sobre nosotros</h5>
+                        <p class="card-text">Pet Society es una plataforma digital para animales y dueños preocupados por el bienestar de sus mascotas.</p>
+                        <a href="#" class="btn btn-dark">Saber Más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Nuestra historia</h5>
+                        <p class="card-text">Somos una clínica veterinaria comprometida con el bienestar animal desde hace 10 años.</p>
+                        <a href="#" class="btn btn-dark">Saber Más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Regístrate</h5>
+                        <p class="card-text">Únete a Pet Society y disfruta de beneficios exclusivos para ti y tu mascota.</p>
+                        <a href="registro.html" class="btn btn-dark">Saber Más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="text-center mt-5">
+        <p>¡Cuida de tus mascotas!</p>
+        <div>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

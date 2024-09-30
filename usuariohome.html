@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria - Panel de Usuario</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="usuariohome.html">
+            <img src="images/logo.jpeg" alt="logo" style="width: 100px;" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-buttons">
+            <button class="btn btn-secondary" onclick="window.location.href='reserva.html'">Reservar ahora</button>
+            <button class="btn btn-warning" onclick="window.location.href='index.html'">Cerrar sesión</button>
+          </div>
+    </div>
+</nav>
+
+    <!-- Contenedor principal -->
+    <main class="container">
+        <h1 class="welcome">¡Bienvenido Augusto!</h1>
+
+        <!-- Navegación en columnas -->
+        <div class="row text-center my-4 nav-column" style="background-color: #ff9f43; border-radius: 10px;">
+            <div class="col-md-3">
+                <button id="btn-agregar" class="btn btn-link nav-btn">
+                    <img src="images/pets-hotel-house-sign-with-a-paw-svgrepo-com.svg" class="nav-icon" alt="Añadir Mascota">
+                    <p>Añadir Mascota</p>
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="btn-mascotas" class="btn btn-link nav-btn active">
+                    <img src="images/pets-hotel-symbol-with-a-dog-and-a-cat-in-a-circle-with-one-star-svgrepo-com.svg" class="nav-icon" alt="Mis Mascotas">
+                    <p>Mis Mascotas</p>
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button id="btn-citas" class="btn btn-link nav-btn">
+                    <img src="images/date-svgrepo-com.svg" class="nav-icon" alt="Mis Citas">
+                    <p>Mis Citas</p>
+                </button>
+            </div>
+            <div class="col-md-3">
+                <img src="https://www.pngmart.com/files/16/Puppy-Dog-Face-PNG-Photos.png" class="dog-image" alt="Perro">
+            </div>
+        </div>
+
+        <!-- Sección "Mis Mascotas" -->
+        <section id="mascotas" class="tab-content active">
+            <div class="container my-5">
+                <div class="row" id="lista-mascotas">
+                    <!-- Las tarjetas de las mascotas se agregarán aquí -->
+                </div>
+            </div>
+            
+        </section>
+
+
+        <!-- Sección "Añadir Mascota" -->
+        <section id="agregar" class="tab-content">
+            <div class="container my-5">
+                <h2 class="text-center">Añadir Mascota</h2>
+                <form id="form-agregar-mascota">
+                    <!-- Especie de Mascota -->
+                    <div class="form-group">
+                        <label for="tipo">Especie de mascota</label>
+                        <select id="tipo" class="form-control" required>
+                            <option value="">Selecciona la especie de mascota</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="ave">Ave</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre-mascota">Nombre de la Mascota</label>
+                        <input type="text" class="form-control" id="nombre-mascota" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="raza-mascota">Raza</label>
+                        <input type="text" class="form-control" id="raza-mascota" placeholder="Raza">
+                    </div>
+                    <div class="form-group">
+                        <label for="edad-mascota">Edad</label>
+                        <input type="number" class="form-control" id="edad-mascota" placeholder="Edad">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="confirmar" required>
+                        <label for="confirmar">Confirmo que los datos de mi mascota son correctos</label>
+                    </div>
+                    <!-- Botón de Enviar -->
+                    <button type="button" class="btn btn-primary" id="agregar-mascota-btn">Añadir a mis mascotas</button>
+                </form>
+            </div>
+            
+        </section>
+
+
+        <!-- Sección "Mis Citas" -->
+        <section id="citas" class="tab-content">
+        </section>
+        
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="text-center mt-5">
+        <p>¡Cuida de tus mascotas!</p>
+        <div>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            <a href="#"><img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok"></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const citasContainer = document.getElementById('citas'); // Asumiendo que este es el ID de tu sección de citas
+    
+            // Recupera las reservas del localStorage
+            const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+    
+            if (reservas.length > 0) {
+                citasContainer.innerHTML += '<h2>Mis Citas</h2>'; // Añade un encabezado si hay citas
+    
+                reservas.forEach((reserva, index) => {
+                    citasContainer.innerHTML += `
+                        <div class="cita">
+                            <p><strong>Dueño:</strong> ${reserva.nombreDueno}</p>
+                            <p><strong>Nombre de mascota:</strong> ${reserva.nombreMascota}</p>
+                            <p><strong>Fecha:</strong> ${reserva.fechaReserva}</p>
+                            <p><strong>Raza:</strong> ${reserva.raza}</p>
+                            <p><strong>Teléfono:</strong> ${reserva.telefono}</p>
+                            <p><strong>Información:</strong> ${reserva.sintomas}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            } else {
+                citasContainer.innerHTML += '<p>No tienes citas agendadas.</p>'; // Mensaje si no hay citas
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script para cambiar entre secciones -->
+    <script src="js/usuariohome.js"></script>
+</body>
+</html>
+
